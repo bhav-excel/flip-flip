@@ -1,0 +1,227 @@
+*{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+   height:100vh; 
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   font-family: sans-serif;
+   background: radial-gradient(circle, #ffd7d7, #eca9a9, #efc1c1);
+   background-image: linear-gradient(rgba(246, 75, 75, 0.552), rgba(222, 76, 76, 0.688)),url("https://image.slidesdocs.com/responsive-images/docs/a-heart-shaped-in-passionate-red-love-page-border-background-word-template_84e1084312__1131_1600.jpg");
+    background-size: cover; /* or 'contain', depending on what you want */
+    background-repeat: no-repeat;
+    /* background-position: center; */
+    background-blend-mode:lighten ;
+}
+
+/* Book */
+.book{
+    position:relative;
+    width: 500px;
+    height: 600px;
+    transition: transform 1s;
+}
+
+.page{
+    position :absolute;
+    width:100%;
+    height:100%;
+    top: 0;
+    left:0;
+    transform-style: preserve-3d;
+    perspective: 1700px;
+    
+
+}
+.front,.back{
+    background-color: rgb(183, 25, 25);
+    position:absolute; /*  beacuse we want front on the top of back */
+    width:100%;
+    height:100%;
+    top: 0;
+    left:0;
+    transform-origin: left;
+    transition: transform 1.5s;
+}
+/* Paper flipped effect */
+.flipped .front,
+.flipped .back{
+    transform: rotateY(-180deg);
+}
+.front{
+    z-index: 1;
+    backface-visibility: hidden;
+    border-left: solid rgb(58, 4, 4);
+}
+.back{
+    z-index: 0;
+}
+
+/* Paper stack order */
+#p1{
+    z-index: 7;
+}
+
+/*Content on Cover Page*/
+/* #f1{
+    background-image: ;
+} */
+#f1 #line1 {
+    font-size: 110px;
+    margin-left: 10px;
+    /* height: 80%; */
+}
+#f1 #line2{
+    font-size: 110px;
+    padding-top: 80px;
+    display: flex;
+    justify-content: right;
+}
+#f1 #line3{
+    font-size: 110px;
+    margin-left: 10px;
+    padding-top: 80px;
+}
+#f2,#f3,#f4,#f5,#f6{
+    padding: 10px;
+    font-size: 30px;
+    font-weight: 20px;
+}
+#f7{
+    font-size: 24px;
+    padding: 30px;
+}
+
+#p2{
+    z-index: 6;
+}
+#p3{
+    z-index: 5;
+}
+#p4{
+    z-index: 4;
+}
+#p5{
+    z-index: 3;
+}
+#p6{
+    z-index: 2;
+}
+#p7{
+    z-index: 1;
+}
+#b1{
+    transform: rotateY(180deg);
+    display: flex;
+    width: 100%;
+    height:100%;
+    padding:0;
+    margin:0;
+    /* flex-direction: column;*/
+    align-items: center;
+    justify-content: center;
+    /* padding: 20px; */
+    /* overflow: hidden; */
+}
+.front-content,
+.back-content{
+    position: relative;
+    z-index:2;
+    width: 100%;
+    height:80% ;
+    color:#2d2d2d ;
+    /* display: flex; */
+    justify-content: left;
+    align-items: center;
+    font-family: "Dancing Script", cursive;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 50px;
+}
+.back-content{
+    transform:rotateY(180deg)
+}
+
+
+
+/* Controller Buttons */
+button{
+    border:none;
+    background-color: transparent;
+    cursor:pointer;
+    margin: 10px;
+    height: 50px;
+    width:50px;
+    background-color: rgb(100, 87, 87);
+    border-radius: 50%;
+    transition: transform 1s;
+    box-shadow: 3px 2px 10px 1px rgb(77, 73, 73);
+}
+button:hover {
+    background-color:rgb(55, 49, 49) ;
+}
+button:active {
+    background-color: rgb(35, 31, 31);
+    box-shadow: 3px 3px 13px 2px rgb(79, 77, 77);
+}
+i{
+    font-size: 30px;
+    display: flex;
+    justify-content: center;
+    height: 50%;
+    width:100%;
+    color:#eca9a9;
+}
+.collage-iframe{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+    background-color: rgb(239, 47, 47);
+}
+.collage2-iframe{
+    position: relative;
+    width:100%;
+    display: flex;
+    justify-content: center;
+    height:125%;
+    border: none;
+}
+.back-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 500px;         /* Full width of parent */
+    height: 600px;        /* Full height of parent */
+    background-size:cover ;       /* Ensures the image covers the full area */
+    background-position: center;  /* Centers the image */
+    background-repeat: no-repeat; /* Prevents repetition */
+}
+.back-image1 {
+    position: relative;
+    top: 0;
+    background-color: black;
+    left: 0;
+    width: 100%;         /* Full width of parent */
+    height: 100%;        /* Full height of parent */
+    background-size:contain ;       /* Ensures the image covers the full area */
+    background-position: center;  /* Centers the image */
+    background-repeat: no-repeat; /* Prevents repetition */
+}
+.back-image2 {
+    position: relative;
+    top: 0;
+    background-color: black;
+    left: 0;
+    width: 100%;         /* Full width of parent */
+    height: 125%;        /* Full height of parent */
+    background-size:contain ;       /* Ensures the image covers the full area */
+    background-position: center;  /* Centers the image */
+    background-repeat: no-repeat; /* Prevents repetition */
+}
